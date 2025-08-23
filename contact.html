@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Olympica Natation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Olympica Natation</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="le-club.html">Le Club</a></li>
+          <li><a href="resultats.html">Résultats</a></li>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Ouvrir le menu"><span class="hamburger"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" style="border-radius:12px;">
+      <h1>Contactez-nous</h1>
+      <p>Pour toute question, remplissez le formulaire ou envoyez-nous un email.</p>
+    </section>
+
+    <section class="contact-form">
+      <form onsubmit="event.preventDefault(); alert('Message envoyé (démo).');">
+        <div class="form-group">
+          <label for="name">Nom et prénom *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone *</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Objet</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section class="contact-info">
+      <h2>Nos coordonnées</h2>
+      <p><strong>Adresse :</strong> Piscine Olympique Rades, Cité National Sportif Rades, BP 18, 2034 Ezzahra, Ben Arous, Tunisie</p>
+      <p><strong>Tél / Fax :</strong> +216 79 325 067<br>
+         <strong>Mobile :</strong> +216 97 197 134 / +216 97 978 373<br>
+         <strong>Secrétariat :</strong> +216 26 985 945 - +216 97 978 373<br>
+         <strong>E‑mail :</strong> <a href="mailto:olympica.natation@gmail.com">olympica.natation@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Olympica – Tous droits réservés</p>
+      <div class="social">
+        <a href="#">Facebook</a> | <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

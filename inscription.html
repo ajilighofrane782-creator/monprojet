@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription – Olympica Natation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Olympica Natation</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="le-club.html">Le Club</a></li>
+          <li><a href="resultats.html">Résultats</a></li>
+          <li><a href="inscription.html" class="active">Inscription</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Ouvrir le menu"><span class="hamburger"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" style="border-radius:12px;">
+      <h1>Formulaire d’inscription</h1>
+      <p>Remplissez le formulaire ci-dessous pour rejoindre le club.</p>
+    </section>
+
+    <section>
+      <form onsubmit="event.preventDefault(); alert('Formulaire soumis (démo).');">
+        <label for="nom">Nom et prénom *</label>
+        <input id="nom" type="text" required>
+        <label for="email">Email *</label>
+        <input id="email" type="email" required>
+        <label for="tel">Téléphone *</label>
+        <input id="tel" type="tel" required>
+        <label for="categorie">Catégorie</label>
+        <select id="categorie">
+          <option>Débutant</option>
+          <option>Intermédiaire</option>
+          <option>Compétition</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" rows="5"></textarea>
+        <button type="submit">S’inscrire</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Olympica – Tous droits réservés</p>
+      <div class="social">
+        <a href="#">Facebook</a> | <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
