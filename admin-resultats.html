@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résultats Administrateur</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: Arial; padding: 20px; }
+h2 { color: #004080; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 10px; text-align: left; }
+input { width: 90%; padding: 5px; }
+button { padding: 5px 10px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h2>Modifier les Résultats</h2>
+
+<table id="resultats-table">
+<tr><th>Compétition</th><th>Date</th><th>Nageur</th><th>Épreuve</th><th>Résultat</th><th>Action</th></tr>
+
+<tr data-id="1">
+<td>Championnat régional</td>
+<td><input type="date" value="2025-08-01"></td>
+<td><input type="text" value="Ajili Ghofrane"></td>
+<td><input type="text" value="50m libre"></td>
+<td><input type="text" value="00:28:34"></td>
+<td><button onclick="saveResult(1)">Sauvegarder</button></td>
+</tr>
+
+<tr data-id="2">
+<td>Open national</td>
+<td><input type="date" value="2025-07-15"></td>
+<td><input type="text" value="Selim Alajili"></td>
+<td><input type="text" value="100m dos"></td>
+<td><input type="text" value="01:05:22"></td>
+<td><button onclick="saveResult(2)">Sauvegarder</button></td>
+</tr>
+
+<tr data-id="3">
+<td>Coupe Olympique</td>
+<td><input type="date" value="2025-06-20"></td>
+<td><input type="text" value="Selim Alajili"></td>
+<td><input type="text" value="50m papillon"></td>
+<td><input type="text" value="00:27:10"></td>
+<td><button onclick="saveResult(3)">Sauvegarder</button></td>
+</tr>
+</table>
+
+<br>
+<a href="admin-dashboard.html">Retour Dashboard</a> | <a href="index.html">Retour au site</a>
+
+<script>
+function saveResult(id){
+  const row = document.querySelector('tr[data-id="'+id+'"]');
+  const data = {
+    competition: row.cells[0].textContent,
+    date: row.cells[1].children[0].value,
+    nageur: row.cells[2].children[0].value,
+    epreuve: row.cells[3].children[0].value,
+    resultat: row.cells[4].children[0].value
+  };
+  localStorage.setItem('resultat-'+id, JSON.stringify(data));
+  alert("Résultat sauvegardé !");
+}
+
+// Charger les valeurs depuis localStorage
+window.onload = function(){
+  for(let i=1; i<=3; i++){
+    const saved = JSON.parse(localStorage.getItem('resultat-'+i));
+    if(saved){
+      const row = document.querySelector('tr[data-id="'+i+'"]');
+      row.cells[1].children[0].value = saved.date;
+      row.cells[2].children[0].value = saved.nageur;
+      row.cells[3].children[0].value = saved.epreuve;
+      row.cells[4].children[0].value = saved.resultat;
+    }
+  }
+}
+</script>
+
+</body>
+</html>

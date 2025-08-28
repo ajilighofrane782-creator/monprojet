@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Administrateur</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: Arial; padding: 20px; }
+h2 { color: #004080; }
+button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 10px; text-align: left; }
+.approved { background-color: #d4edda; }
+.rejected { background-color: #f8d7da; }
+</style>
+</head>
+<body>
+
+<h2>Tableau des Inscriptions</h2>
+<table id="inscriptions-table">
+<tr><th>Nom</th><th>Prénom</th><th>Email</th><th>Statut</th><th>Action</th></tr>
+<tr>
+<td>Ajili</td><td>Ghofrane</td><td>ghofrane@example.com</td><td id="status-1">En attente</td>
+<td><button onclick="approve(1)">Accepter</button><button onclick="reject(1)">Refuser</button></td>
+</tr>
+<tr>
+<td>Selim</td><td>Alajili</td><td>selim@example.com</td><td id="status-2">En attente</td>
+<td><button onclick="approve(2)">Accepter</button><button onclick="reject(2)">Refuser</button></td>
+</tr>
+</table>
+
+<br>
+<button onclick="window.location.href='admin-resultats.html'">Modifier Résultats</button>
+<br><br>
+<a href="index.html">Retour au site</a>
+
+<script>
+function approve(id){
+  document.getElementById("status-"+id).textContent="Accepté";
+  document.getElementById("status-"+id).className="approved";
+}
+function reject(id){
+  document.getElementById("status-"+id).textContent="Refusé";
+  document.getElementById("status-"+id).className="rejected";
+}
+</script>
+
+</body>
+</html>
