@@ -40,3 +40,20 @@
   // Initial
   render();
 })();
+// Gestion des onglets Résultats
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".tab-button-resultats");
+  const contents = document.querySelectorAll(".tab-content-resultats");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Retirer "active" partout
+      buttons.forEach((b) => b.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
+
+      // Activer le bouton cliqué et son contenu
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
+});

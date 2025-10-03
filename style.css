@@ -166,3 +166,85 @@ footer .social a:hover { text-decoration: underline; }
   .nav-links li a { padding: 0.6rem 0.5rem; }
   .hero { padding: 2.5rem 1rem; }
 }
+/* ===== Résultats - Onglets & Tableaux ===== */
+.resultats-container {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.tabs-resultats {
+  margin-bottom: 20px;
+}
+
+.tab-button-resultats {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.tab-button-resultats:hover {
+  background: #005fa3;
+}
+
+.tab-button-resultats.active {
+  background: #003f73;
+}
+
+.tab-content-resultats {
+  display: none;
+}
+
+.tab-content-resultats.active {
+  display: block;
+}
+
+/* Tableaux */
+.resultats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resultats-table th,
+.resultats-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  color: black; /* ✅ pour bien voir les textes */
+}
+
+.resultats-table th {
+  background: #0077cc;
+  color: white;
+}
+
+.resultats-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+/* Style pour l’icône administrateur dans le menu */
+ul li.admin-nav {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+ul li.admin-nav a i {
+  color: white;
+  background-color: #004080;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+ul li.admin-nav a i:hover {
+  background-color: #0066cc;
+}
